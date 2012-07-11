@@ -1,0 +1,17 @@
+
+maydenlab:~ hwu5$
+maydenlab:~ hwu5$ crontab -e
+crontab: installing new crontab
+maydenlab:~ hwu5$ crontab -l
+*/1 * * * * php /Volumes/Web/Users/hwu5/Sites/cypcom/crontab/robot1.php
+maydenlab:~ hwu5$
+
+= = = = = = = = = = = = = = = =
+Other example::
+1.
+*/1 * * * * mail -s TitleTest hwu5@slu.edu < mailContent.txt
+
+Note::You can test this command works or not by typing this command in command mode.
+
+
+

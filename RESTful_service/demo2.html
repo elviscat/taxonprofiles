@@ -1,0 +1,74 @@
+<html>
+<script src="http://www.google.com/jsapi"></script>
+<script>
+ 
+var mockUrl, options, canvas;
+ 
+google.load("jquery", "1.3.2");
+google.setOnLoadCallback(function(){
+    //Enable Ajax object.
+    mockUrl = 'http://maydenlab.slu.edu/~hwu5/taxonprofiles/RESTful_service/index.php/TaxonProfilesList/';
+    options = {
+        url: mockUrl + 'showlist',
+        async: false,
+        type: 'get',
+        data: ''
+    };
+    
+    canvas = $('#canvas');
+ 
+    /*
+    alert('Case 6: 新增資源 (POST)\n' + demoCase6);
+    demoCase6();
+ 
+    alert('Next Case 7: 更新資源 (PUT)\n' + demoCase7);
+    demoCase7();
+ 
+    alert('Next Case 8: 刪除資源 (DELETE)\n' + demoCase8);
+    demoCase8();
+ 
+    alert('Next Case 9: 找不到指定資源\n' + demoCase9);
+    demoCase9();
+ 
+    alert('End.');
+    */
+});
+
+/*
+function
+demoCase6() { //Case 6: 新增資源 (POST)
+    options.type = 'post';
+    options.data = 'abc=123&def=567';
+    canvas.html( $.ajax(options).responseText );
+}
+ 
+function
+demoCase7() { //Case 7: 更新資源 (PUT)
+    options.type = 'put';
+    options.data = 'abc=764';
+    canvas.html( $.ajax(options).responseText );
+}
+ 
+function
+demoCase8() { //Case 8: 刪除資源 (DELETE)
+    options.type = 'delete';
+    canvas.html( $.ajax(options).responseText );
+}
+ 
+function
+demoCase9() { //Case 9: 找不到指定資源
+    options.url = mockUrl + 'xyz';
+    options.type = 'get';
+    options.complete = function(xhr, statusText) {
+        alert('Status code: ' + xhr.status);
+    };
+    $.ajax(options);
+}
+*/
+
+</script>
+ 
+<div id="canvas" style="width:500;height:300;border:2px solid black">
+</div>
+ 
+</html>

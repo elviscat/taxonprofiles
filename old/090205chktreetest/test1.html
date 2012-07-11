@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>CheckTree v 0.2 by JJ Geewax</title>
+<script src="jquery-1.js" type="text/javascript"></script>
+<script src="jquery.checktree.js" type="text/javascript"></script>
+<script>
+function showMsg(e){
+	//var all = $("ul.tree");
+	//alert($('.all').text());
+	//var all2 = $(this).next().checked();
+    //if(all2)
+    
+    //alert(all2.text());
+    
+    
+    for (var i=1;i<12;i++)
+    {
+      if($("#geo"+i).checked)
+        alert($("#geo"+i).val());
+    }
+
+    
+    
+	//$("#geo1").nextAll().alert();
+	
+	//alert($("ul.tree").[0].length);
+	//alert($("#geo1").val());
+	
+	/*
+	$.post("search_species/search_species.php",
+		{keyword:$("#keyword").val(), Genus_name:$("#Genus_name").val(), Species_name:$("#Species_name").val()},
+		function(data){//do something
+			//alert(data);
+			//$('#msg').html('<h1>'+data+'</h1>');
+			$('#msg').html(data);
+			//$('#msg').fadeIn();
+		});
+	*/
+	//$('#msg').html('<h1>This is a test!!</h1>');
+}
+//$(document).ready(function(e){
+	//$('#search_form').submit(showMsg);
+//});
+
+
+$(document).ready(function(){
+	$("ul.tree").checkTree({
+		onCheck: function(el) {
+			console.log("checked ", el.find("label:first").text());
+		}		
+
+		/*
+		// You can add callbacks to the expand, collapse, check, uncheck, and  halfcheck
+		// events of the tree. The element you use as the argument is the LI element of
+		// the object that fired the event.
+		onExpand: function(el) {
+			console.log("expanded ", el.find("label:first").text());
+		},
+		onCollapse: function(el) {
+			console.log("collapsed ", el.find("label:first").text());
+		},
+		onCheck: function(el) {
+			console.log("checked ", el.find("label:first").text());
+		},
+		onUnCheck: function(el) {
+			console.log("un checked ", el.find("label:first").text());
+		},
+		onHalfCheck: function(el) {
+			console.log("half checked ", el.find("label:first").text());
+		}*/
+		/*
+		// You can set the labelAction variable to either "check" or "expand" 
+		// to change what happens when you click on the label item.
+		// The default is expand, which expands the tree. Check will toggle
+		// the checked state of the items.
+		labelAction: "expand"
+		*/
+		/*
+		// You can also change what happens when you hover over a label (over and out)
+		onLabelHoverOver: function(el) { alert("You hovered over " + el.text()); },
+		onLabelHoverOut: function(el) { alert("You hovered out of " + el.text()); }
+		*/
+	});
+	//
+	$('#222').click(showMsg);
+	//
+	
+});
+</script>
+
+<link type="text/css" rel="stylesheet" href="checktree.css" />
+
+</head>
+<body>
+<h1>CheckTree v 0.2</h1>
+
+<div style="width: 600px; margin: 0 auto; padding: 15px; border: 1px solid #28f; background-color: #def; text-align: center; font-size: 20px; font-weight: bold;">
+CheckTree is on Google Code!
+<div style="font-weight: normal; font-size: 15px; margin-top: 10px;">
+Visit the CheckTree GoogleCode project page: <a href="http://jquery-checktree.googlecode.com">http://jquery-checktree.googlecode.com</a>
+</div>
+</div>
+
+<h2>Demonstration</h2>
+<p>
+Here is a quick demo of the code which renders an unordered list and gives an example of how to format your 
+hierarchy to be rendered appropriately by CheckTree.
+</p>
+
+<div class="all">
+<ul class="tree" style="margin-left: 15px;">
+
+	<li>
+	    <input type="checkbox" name="geo1" id="geo1" value="United States">
+	    <label>United States</label>
+	    <ul>
+			<li>
+			<input type="checkbox" name="geo2" id="geo2" value="pennsylvania">
+	        <label>Pennsylvania</label>
+		    </li>
+
+		</ul>
+	</li>
+	<li>
+		<input type="checkbox" name="geo3" id="geo3" value="Canadia">
+		<label>Canadia</label>
+		<ul>
+			<li>
+				<input type="checkbox" name="geo4" id="geo4" value="Province In Canadia">
+				<label>Province In Canadia</label>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<input type="checkbox" name="geo5" id="geo5" value="Afghanistan">
+		<label>Afghanistan</label>
+	</li>
+
+	<li>
+		<input type="checkbox" name="geo6" id="geo6" value="Sealand">
+	    <label>Sealand</label>
+		<ul>
+			<li>
+				<input type="checkbox" name="geo7" id="geo7" value="Tree City">
+				<label>Tree City</label>
+			</li>
+			<li>
+				<input type="checkbox" name="geo8" id="geo8" value="Oil Province">
+				<label>Oil Province</label>
+				<ul>
+					<li>
+						<input type="checkbox" name="geo9" id="geo9" value="Oil City">
+						<label>Oil City</label>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<input type="checkbox" name="geo10" id="geo10" value="Fun Province">
+				<label>Fun Province</label>
+				<ul>
+					<li>
+						<input type="checkbox" name="geo11" id="geo11" value="Fun City">
+						<label>Fun City</label>
+					</li>
+					<li>
+						<input type="checkbox" name="geo12" id="geo12" value="Not Fun City">
+						<label>Not Fun City</label>
+					</li>
+				</ul>
+			</li>
+
+		</ul>
+    </li>
+</ul>
+</div>
+<br>
+<input class="button" type="submit" value="Select" name="111" id="222" />
+</body>
+</html>
